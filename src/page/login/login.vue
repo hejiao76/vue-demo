@@ -37,7 +37,7 @@
           </div>
           <div class="input_box" style="margin-top:20px ;">
             <span class="iconfont icon-mima"></span>
-            <input v-model="pwd" type="password" placeholder="请输入密码" />
+            <input v-model="password" type="password" placeholder="请输入密码" />
           </div>
 
           <a href="#" class="wangji_word">忘记密码?</a>
@@ -72,12 +72,10 @@
         }
       }
       return {
-        loginForm: {
-          username: '',
-          password: ''
-        },
+          phone: '',
+          password: '',
         rules: {
-          username: [
+          phone: [
               {required: true, trigger: 'change', validator: validateUsername}
           ],
           password: [
@@ -90,7 +88,8 @@
     },
     methods: {
       handleLogin() {
-          debugger
+        console.log(this.phone)
+        console.log(this.password)
 //        this.$refs.loginForm.validate(valid => {
 //          if (valid) {
 //            this.loading = true
