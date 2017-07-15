@@ -1,0 +1,23 @@
+.global_box .global_box_top .nav_top a { color: #FFFFFF;}
+.global_box .global_box_top {
+   border-bottom: none; 
+}
+.center_bc { width:100%; overflow: hidden; position: relative;}  
+
+.bc_img_login { float: left; width: 100%;}
+.login_box { width: 256px; padding: 0 30px 40px 30px; position: absolute; top: 50px; right: 16%; z-index: 99; box-shadow: 0 0 4px #CCCCCC; background: #FFFFFF;}
+.top_logo  { margin-top: 18px; margin-bottom: 23px; overflow: hidden;}
+.top_logo img,.top_logo >span { float: left;}
+.top_logo >span { height: 46px; line-height: 46px; font-size: 24px; margin-left: 20px;}
+.input_box { width: 100%; position: relative; border: 1px solid #ccc; padding: 6px 0 10px 0; border-radius: 3px;}
+.input_box >input { border: none; margin-left: 8px; outline: none; font-size: 16px;}
+.input_box .iconfont { color: #57a126; font-size: 20px; margin: 0 10px;}
+.input_box::after {     content: "";
+    position: absolute;
+    width: 1px;
+    height: 24px;
+    background: #CCCCCC;
+    left: 38px;
+    top: 7px;}
+.wangji_word { float: right; margin-top: 20px; color: #57a126; font-size: 16px; margin-bottom: 30px;}
+.btn { width: 100%; text-align:center; clear: both; outline: none; box-shadow: none;}
