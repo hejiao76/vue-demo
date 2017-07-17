@@ -33,7 +33,7 @@
         <form action="" method="post">
           <div class="input_box">
             <span class="iconfont icon-ordinarymobile"></span>
-            <input v-model="phone" type="text" placeholder="请输入手机号" />
+            <input v-model="phone" @keyup.enter.native="handleLogin" type="text" placeholder="请输入手机号" />
           </div>
           <div class="input_box" style="margin-top:20px ;">
             <span class="iconfont icon-mima"></span>
@@ -52,6 +52,7 @@
   export default {
     data() {
       const validateUsername = (rule, value, callback) => {
+        debugger
         // callback不传参表示验证通过，传error验证不通过
         if (value.length === 0) {
           callback(new Error('请输入用户名'))
@@ -90,6 +91,22 @@
       handleLogin() {
         console.log(this.phone)
         console.log(this.password)
+        let _self = this
+        this.$http.post('/action/back/user/login', {
+          username: this.phone,
+          password: this.password
+        })
+          .then(function (response) {
+            console.log(response)
+            if (response.data && response.data.code === '200') {
+                alert(1)
+              debugger
+              _self.$router.push({ path: '/secureMonitor/overview' })
+            }
+          })
+          .catch(function (error) {
+            console.log(error)
+          })
 //        this.$refs.loginForm.validate(valid => {
 //          if (valid) {
 //            this.loading = true
